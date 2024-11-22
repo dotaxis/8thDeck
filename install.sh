@@ -94,12 +94,23 @@ WINEPATH="$FF8_LIBRARY/steamapps/compatdata/39150/pfx"
 [ $IS_STEAMOS = true ] && WINEPATH="${HOME}/.steam/steam/steamapps/compatdata/39150/pfx"
 export STEAM_COMPAT_MOUNTS="$(getSteamLibrary 2805730):$(getSteamLibrary 1628350):$(getSteamLibrary 39150)"
 
-# Force FF8 under Proton 9
-echo "Rebuilding FINAL FANTASY VIII under Proton 9..."
+# Kill Steam for next steps
+echo "Closing Steam..."
 while pidof "steam" > /dev/null; do
   killall -9 steam &>> "8thDeck.log"
   sleep 1
 done
+echo
+
+# Set Launch Options for FF8
+echo "Setting FF8 Launch Options for all Steam accounts..."
+for LOCALCONFIG in ${HOME}/.steam/steam/userdata/*/config/localconfig.vdf ; do
+  perl -0777 -i -pe "s@\"39150\"\n\s+\{@\"39150\"\n\t\{\n\t\"LaunchOptions\" \"echo \\\\\"%command%\\\\\" | sed 's/waitforexitandrun//g' | sed 's|/proton|/files/bin/wine|g' | sed 's/_v2-entry-point --verb= --/||/g' | sed 's/.*||//' | env WINEDLLOVERRIDES=\\\\\"dinput=n,b\\\\\" WINEFSYNC=1 WINEPREFIX=\\\\\"${WINEPATH}\\\\\" sh\"\n\t@gs" "$LOCALCONFIG"
+done
+echo
+
+# Force FF8 under Proton 9
+echo "Rebuilding FINAL FANTASY VIII under Proton 9..."
 cp ${XDG_DATA_HOME}/Steam/config/config.vdf ${XDG_DATA_HOME}/Steam/config/config.vdf.bak
 perl -0777 -i -pe 's/"CompatToolMapping"\n\s+{/"CompatToolMapping"\n\t\t\t\t{\n\t\t\t\t\t"39150"\n\t\t\t\t\t{\n\t\t\t\t\t\t"name"\t\t"proton_9"\n\t\t\t\t\t\t"config"\t\t""\n\t\t\t\t\t\t"priority"\t\t"250"\n\t\t\t\t\t}/gs' \
 ${XDG_DATA_HOME}/Steam/config/config.vdf
