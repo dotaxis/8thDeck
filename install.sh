@@ -161,23 +161,6 @@ echo "Applying patches to FF8..."
 cp -f "deps/timeout.exe" "$WINEPATH/drive_c/windows/system32/"
 echo "FF8DISC1" > "$WINEPATH/drive_c/.windows-label"
 echo "44000000" > "$WINEPATH/drive_c/.windows-serial"
-# [ ! -d "$FF8_DIR/music/vgmstream" ] && mkdir -p "$FF8_DIR/music/vgmstream"
-# [ -d "$FF8_DIR/data/music_ogg" ] && cp "$FF8_DIR/data/music_ogg/"* "$FF8_DIR/music/vgmstream/"
-# if [ -d "$FF8_DIR/data/lang-en" ]; then
-#   files=(
-#     "battle/camdat0.bin"
-#     "battle/camdat1.bin"
-#     "battle/camdat2.bin"
-#     "battle/co.bin"
-#     "battle/scene.bin"
-#     "kernel/KERNEL.BIN"
-#     "kernel/kernel2.bin"
-#     "kernel/WINDOW.BIN"
-#   )
-#   for file in "${files[@]}"; do
-#     ln -fs "$FF8_DIR/data/lang-en/$file" "$FF8_DIR/data/$file"
-#   done
-# fi
 echo
 
 # SteamOS only
