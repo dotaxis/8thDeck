@@ -164,7 +164,7 @@ cp -f deps/settings.xml "$INSTALL_PATH/J8Workshop/"
 [ ! -f "$INSTALL_PATH/J8Workshop/profiles/Default.xml" ] && cp "deps/Default.xml" "$INSTALL_PATH/J8Workshop/profiles/" &>> "8thDeck.log"
 sed -i "s|@STEAMOS@|$IS_STEAMOS|" "$INSTALL_PATH/Junction VIII.sh"
 sed -i "s|<LibraryLocation>REPLACE_ME</LibraryLocation>|<LibraryLocation>Z:$INSTALL_PATH/mods</LibraryLocation>|" "$INSTALL_PATH/J8Workshop/settings.xml"
-sed -i "s|<FF8Exe>REPLACE_ME</FF8Exe>|<FF8Exe>Z:$FF8_DIR/FF8.exe</FF8Exe>|" "$INSTALL_PATH/J8Workshop/settings.xml"
+sed -i "s|<FF8Exe>REPLACE_ME</FF8Exe>|<FF8Exe>Z:$FF8_DIR/FF8_en.exe</FF8Exe>|" "$INSTALL_PATH/J8Workshop/settings.xml"
 echo
 
 # Tweaks to game
