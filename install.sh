@@ -176,10 +176,6 @@ echo
 
 # SteamOS only
 if [ $IS_STEAMOS = true ]; then
-  # Steam Deck Auto-Config (mod)
-  mkdir -p "$INSTALL_PATH/mods"
-  cp -rf deps/SteamDeckSettings "$INSTALL_PATH/mods/"
-
   # This allows moving and clicking the mouse by using the right track-pad without holding down the STEAM button
   echo "Adding controller config..."
   cp -f deps/controller_neptune_gamepad+mouse+click.vdf ${HOME}/.steam/steam/controller_base/templates/controller_neptune_gamepad+mouse+click.vdf
