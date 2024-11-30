@@ -141,8 +141,7 @@ echo
 
 # Download Junction VIII from Github
 echo "Downloading Junction VIII..."
-#downloadDependency "tsunamods-codes/Junction-VIII" "*.exe" VIII_INSTALLER
-VIII_INSTALLER="$HOME/.cache/JunctionVIII.exe"
+downloadDependency "tsunamods-codes/Junction-VIII" "*.exe" VIII_INSTALLER
 echo
 
 # Install Junction VIII using EXE
