@@ -22,8 +22,8 @@
   <LibraryLocation>REPLACE_ME</LibraryLocation>
   <FF8Exe>REPLACE_ME</FF8Exe>
   <FF8InstalledVersion>Steam</FF8InstalledVersion>
-  <FFNxUpdateChannel>Canary</FFNxUpdateChannel>
-  <AppUpdateChannel>Canary</AppUpdateChannel>
+  <FFNxUpdateChannel>Stable</FFNxUpdateChannel>
+  <AppUpdateChannel>Stable</AppUpdateChannel>
   <Options>
     <GeneralOptions>AutoSortMods</GeneralOptions>
     <GeneralOptions>AutoActiveNewMods</GeneralOptions>
