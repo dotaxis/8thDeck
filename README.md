@@ -20,11 +20,12 @@ This script will:
 ## Prerequisites
 
 ### Pop!_OS
-`gawk` needs to be installed or you will encounter a syntax error when 8thDeck tries to detect FF8's installation. Open the terminal and follow these steps:
-1. Install `gawk`
+**If you are running Pop!_OS**, `gawk` needs to be installed or you will encounter a syntax error when 8thDeck tries to detect FF8's installation.
+1. Open the terminal and run the following command:
 ```bash
 sudo apt install gawk
 ```
+**If you are not running Pop!_OS** or don't know what that means, you can skip installing `gawk`.
 
 <br>
 
