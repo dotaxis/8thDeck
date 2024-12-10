@@ -104,6 +104,7 @@ echo
 
 # Set Launch Options for FF8
 echo "Setting FF8 Launch Options for all Steam accounts..."
+echo "echo \"%command%\" | sed 's/waitforexitandrun/run/g' | env WINEDLLOVERRIDES=\"dinput=n,b\" sh" > launch_options.txt
 for LOCALCONFIG in ${HOME}/.steam/steam/userdata/*/config/localconfig.vdf ; do
   perl -0777 -i -pe "s@\"39150\"\n\s+\{@\"39150\"\n\t\{\n\t\"LaunchOptions\" \"echo \\\\\"%command%\\\\\" | sed 's/waitforexitandrun/run/g' | env WINEDLLOVERRIDES=\\\\\"dinput=n,b\\\\\" sh\"\n\t@gs" "$LOCALCONFIG"
 done
@@ -151,6 +152,7 @@ STEAM_COMPAT_APP_ID=39150 STEAM_COMPAT_DATA_PATH="${WINEPATH%/pfx}" \
 STEAM_COMPAT_CLIENT_INSTALL_PATH=$(readlink -f "$HOME/.steam/root") \
 "$RUNTIME" -- "$PROTON" waitforexitandrun \
 "$VIII_INSTALLER" /VERYSILENT /DIR="Z:$INSTALL_PATH" /LOG="JunctionVIII.log" &>> "8thDeck.log"
+cp launch_options.txt "$INSTALL_PATH/"
 echo
 
 # Tweaks to Junction VIII install directory
