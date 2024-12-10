@@ -8,7 +8,7 @@ echo "" > "8thDeck.log"
 exec > >(tee -ia "8thDeck.log") 2>&1
 
 echo "########################################################################"
-echo "#                             8thDeck v0.01                            #"
+echo "#                             8thDeck v0.02                            #"
 echo "########################################################################"
 echo "#    This script will:                                                 #"
 echo "# 1. Apply patches to FF8's proton prefix to accomodate Junction VIII  #"
