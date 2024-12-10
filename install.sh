@@ -105,7 +105,7 @@ echo
 # Set Launch Options for FF8
 echo "Setting FF8 Launch Options for all Steam accounts..."
 for LOCALCONFIG in ${HOME}/.steam/steam/userdata/*/config/localconfig.vdf ; do
-  perl -0777 -i -pe "s@\"39150\"\n\s+\{@\"39150\"\n\t\{\n\t\"LaunchOptions\" \"echo \\\\\"%command%\\\\\" | sed 's/waitforexitandrun//g' | sed 's|/proton|/files/bin/wine|g' | sed 's/_v2-entry-point --verb= --/||/g' | sed 's/.*||//' | env WINEDLLOVERRIDES=\\\\\"dinput=n,b\\\\\" WINEFSYNC=1 WINEPREFIX=\\\\\"${WINEPATH}\\\\\" sh\"\n\t@gs" "$LOCALCONFIG"
+  perl -0777 -i -pe "s@\"39150\"\n\s+\{@\"39150\"\n\t\{\n\t\"LaunchOptions\" \"echo \\\\\"%command%\\\\\" | sed 's/waitforexitandrun/run/g' | env WINEDLLOVERRIDES=\\\\\"dinput=n,b\\\\\" sh\"\n\t@gs" "$LOCALCONFIG"
 done
 echo
 
