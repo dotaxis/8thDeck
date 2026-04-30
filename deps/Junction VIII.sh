@@ -38,5 +38,6 @@ PROTON=$(LIBRARY=$(getSteamLibrary 2805730) && [ -n "$LIBRARY" ] && echo "$LIBRA
 [ -z "$RUNTIME" ] && { promptUser  "Steam Linux Runtime not found!"; exit 1; }
 [ -z "$PROTON" ] && { promptUser  "Proton not found!"; exit 1; }
 
+echo "39150" > "$PWD/steam_appid.txt"
 
 "$RUNTIME" -- "$PROTON" waitforexitandrun "$PWD/Junction VIII.exe" $*
