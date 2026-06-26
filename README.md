@@ -1,3 +1,8 @@
+# This project has been deprecated in favour of [MateriaForge](https://github.com/dotaxis/MateriaForge-rs)
+MateriaForge has support for both 7th Heaven and Junction VIII. This repo will be kept online in a read-only state for ease of reference.
+
+---
+
 # 8thDeck
 Installer &amp; launcher for Junction VIII on SteamOS and other Linux distros
 
